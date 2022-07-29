@@ -6,7 +6,8 @@ Date: 12/5/2019
 |  It is only use for testing server firewall    |
 |  and education.                                |
 |------------------------------------------------|
-Updated: 6/8/2020
+Updated: 29/7/2022
+Retouch By retx1
 */
 package main
 
@@ -216,7 +217,7 @@ func main() {
 				}
 				defer conn.Close()
 				for {
-					buffer := make([]byte, 128)
+					buffer := make([]byte, 100000)
 					rand.Read(buffer)
 					if stop > 0 {
 						break
