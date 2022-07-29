@@ -117,7 +117,7 @@ func init() {
 func main() {
 	fmt.Println("|--------------------------------------|")
 	fmt.Println("|   Golang : Server Stress Test Tool   |")
-	fmt.Println("|          C0d3d By Lee0n123           |")
+	fmt.Println("|          Coded By retx1              |")
 	fmt.Println("|--------------------------------------|")
 	if len(os.Args) != 7 {
 		fmt.Printf("Usage: %s host port mode connections seconds timeout(second)\r\n", os.Args[0])
@@ -263,7 +263,7 @@ func main() {
 					for t := 0; t < 140; t++ {
 						s.SetDeadline(time.Now().Add(time.Duration(timeout) * time.Second))
 						url := "GET /?" + strconv.Itoa(rand.Intn(10000)) + string(str[rand.Intn(len(str))]) + strconv.Itoa(rand.Intn(10000)) + string(str[rand.Intn(len(str))]) + strconv.Itoa(rand.Intn(10000)) + string(str[rand.Intn(len(str))]) + string(str[rand.Intn(len(str))]) + string(str[rand.Intn(len(str))]) //random url                                                                                                                                                                                                                                                                    // big buffer
-						tmp := make([]byte, 1024)                                                                                                                                                                                                                                                                          // using small tmo buffer for demonstrating
+						tmp := make([]byte, 100000)                                                                                                                                                                                                                                                                          // using small tmo buffer for demonstrating
 						s.Write([]byte(url + payload))
 						count++
 						_, err := s.Read(tmp)
